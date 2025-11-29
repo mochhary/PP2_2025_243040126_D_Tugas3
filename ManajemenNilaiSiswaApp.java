@@ -26,7 +26,7 @@ import java.awt.event.ActionListener;
 
         public ManajemenNilaiSiswaApp() {
             // 1. Konfigurasi Frame Utama
-            setTitle("Aplikasi Manajemen Nilai Siswa (Final: Tugas 1-4)");
+            setTitle("Aplikasi Manajemen Nilai Siswa");
             setSize(500, 450); 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null); 
@@ -83,7 +83,7 @@ import java.awt.event.ActionListener;
                 }
             });
 
-            // Event Handling Tombol Reset (TUGAS 4)
+            
             btnReset.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
