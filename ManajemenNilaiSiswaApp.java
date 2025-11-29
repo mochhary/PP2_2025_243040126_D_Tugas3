@@ -158,8 +158,7 @@ import java.awt.event.ActionListener;
                         "Error Validasi", JOptionPane.ERROR_MESSAGE);
                 return; 
             }
-            
-            // --- TUGAS 3: VALIDASI NAMA MINIMAL 3 KARAKTER ---
+
             if (nama.trim().length() < 3) {
                 JOptionPane.showMessageDialog(this, "Nama harus minimal 3 karakter!",
                         "Error Validasi", JOptionPane.ERROR_MESSAGE);
