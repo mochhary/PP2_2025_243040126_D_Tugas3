@@ -11,10 +11,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-
+/**
+ *
+ * @author hary
+ */
     public class ManajemenNilaiSiswaApp extends JFrame {
 
-        // Deklarasi Variabel Global
         private JTextField txtNama;
         private JTextField txtNilai;
         private JComboBox<String> cmbMatkul;
@@ -22,7 +24,6 @@ import java.awt.event.ActionListener;
         private DefaultTableModel tableModel;
         private JTabbedPane tabbedPane;
 
-        // Konstruktor Utama
         public ManajemenNilaiSiswaApp() {
             // 1. Konfigurasi Frame Utama
             setTitle("Aplikasi Manajemen Nilai Siswa (Final: Tugas 1-4)");
@@ -45,7 +46,6 @@ import java.awt.event.ActionListener;
             add(tabbedPane);
         }
 
-        // Method untuk membuat desain Tab Input
         private JPanel createInputPanel() {
             JPanel panel = new JPanel(new GridLayout(4, 2, 10, 10));
             panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -67,7 +67,7 @@ import java.awt.event.ActionListener;
             txtNilai = new JTextField();
             panel.add(txtNilai);
 
-            // --- TUGAS 4: TOMBOL RESET ---
+            // Button reset
             JButton btnReset = new JButton("Reset Form");
             panel.add(btnReset); 
             
@@ -93,8 +93,7 @@ import java.awt.event.ActionListener;
 
             return panel;
         }
-
-        // Method untuk membuat desain Tab Tabel
+    
         private JPanel createTablePanel() {
             JPanel panel = new JPanel(new BorderLayout());
 
@@ -123,16 +122,14 @@ import java.awt.event.ActionListener;
 
             return panel;
         }
-
-        // Method Helper: Reset Form (TUGAS 4)
+        
         private void resetForm() {
             txtNama.setText("");
             txtNilai.setText("");
             cmbMatkul.setSelectedIndex(0);
             txtNama.requestFocus(); 
         }
-
-        // Method Helper: Hapus Data (TUGAS 2 - Tanpa Konfirmasi)
+       
         private void hapusData() {
             int selectedRow = tableData.getSelectedRow();
             
@@ -147,8 +144,7 @@ import java.awt.event.ActionListener;
                         "Peringatan", JOptionPane.WARNING_MESSAGE);
             }
         }
-
-        // Logika Validasi dan Penyimpanan Data
+       
         private void prosesSimpan() {
             // 1. Ambil data dari input
             String nama = txtNama.getText();
@@ -185,7 +181,6 @@ import java.awt.event.ActionListener;
                 return;
             }
 
-            // 3. Logika Bisnis (TUGAS 1: Switch Case)
             String grade;
             int range = nilai / 10; 
             switch (range) {
