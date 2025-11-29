@@ -82,8 +82,7 @@ import java.awt.event.ActionListener;
                     prosesSimpan();
                 }
             });
-
-            
+          
             btnReset.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -108,7 +107,6 @@ import java.awt.event.ActionListener;
             JScrollPane scrollPane = new JScrollPane(tableData);
             panel.add(scrollPane, BorderLayout.CENTER);
 
-            // --- TUGAS 2: TOMBOL HAPUS ---
             JButton btnHapus = new JButton("Hapus Data Terpilih");
             panel.add(btnHapus, BorderLayout.SOUTH);
 
@@ -133,9 +131,7 @@ import java.awt.event.ActionListener;
         private void hapusData() {
             int selectedRow = tableData.getSelectedRow();
             
-            // Tetap perlu cek -1 agar tidak error/crash
-            if (selectedRow != -1) {
-                // Langsung hapus tanpa tanya-tanya
+            if (selectedRow > -1) {
                 tableModel.removeRow(selectedRow);
                 JOptionPane.showMessageDialog(this, "Data berhasil dihapus!");
             } else {
